@@ -53,6 +53,7 @@ body{
     height: 40px;
     padding: 0 16px;
     border-radius: 20px;
+    -webkit-appearance: none;
 }
 @media (min-width: 450px) {
     .globalHeader >.searchForm > input{
