@@ -12,26 +12,34 @@ img{max-width: 100%; max-height: 100%}  /*就是img再大也不能大过它的�
 /*style*/
 /*body{border:1px solid red}*/
 /*body区域虽然只有内容撑开部分，但是如果给它设置背景色浏览器会智能地把背景色扩展到整个网页*/
-body{background: #eeeeee}
+body{
+    /*background: #eeeeee*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
 
 
 /*头部搜索  开始*/
 .globalHeader{
-    /*border: 1px solid red;*/
-    margin: 20px;
+    padding: 50px 20px;
+
 }
 @media (min-width: 450px) {
     .globalHeader{
-        margin: 60px 0 100px;
+        padding: 100px 20px;
     }
 }
 .globalHeader > .searchForm{
     display: flex;
     justify-content: space-between;
+    position: relative;
+    margin-top: 100px;
+
 }
 @media (min-width: 450px) {
     .globalHeader > .searchForm{
-        max-width: 400px;
+        max-width: 700px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -39,25 +47,42 @@ body{background: #eeeeee}
 .globalHeader >.searchForm > input{
     /*input 有一个默认的border和点击高亮，不好看，把高亮弄掉，重新写一个border覆盖原先的*/
     outline: none;
-    border: 1px solid #dddddd;
+    border: 1px solid #AAAAAA;
     /*尽量占百分之百的意思吗，后面还有搜索，弹性盒子是会压缩*/
     width: 100%;
     height: 40px;
-    padding: 0 10px;
-    margin-right: 10px;
-    border-radius: 4px;
+    padding: 0 16px;
+    border-radius: 20px;
+}
+@media (min-width: 450px) {
+    .globalHeader >.searchForm > input{
+        height: 60px;
+        font-size: 18px;
+        border-radius: 25px;
+    }
 }
 .globalHeader >.searchForm > button{
     /*button也是有默认边框*/
     border: none;
-    /*button太胖了把它压扁了 设置它不换行*/
-    white-space: nowrap;
-    padding: 0 28px;
-    border-radius: 4px;
-    background: #0282B9;
-    color: white;
-    font-size: 16px;
+    padding: 0 18px;
+    position: absolute;
+    background: transparent;
+    top: 0;right: 0;
+    height: 100%;
+}
+@media (min-width: 450px) {
+    .globalHeader >.searchForm > button{
+        padding: 0 30px;
+    }
+}
 
+.globalHeader >.searchForm > button:focus{
+    outline: #0282B9;
+    border-radius: 10px;
+}
+.globalHeader >.searchForm > button .icon{
+    width: 2em;
+    height: 2em;
 }
 /*头部搜索  结束*/
 
@@ -66,61 +91,75 @@ body{background: #eeeeee}
 /*站点   开始*/
 /*平均布局*/
 .globalMain{
-    max-width: 900px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 16px;
+    /*border: 1px solid black;*/
 }
 .globalMain > .siteList{
     /*border: 1px solid black;*/
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
-    justify-content: space-between;
-}
-@media (min-width: 450px) {
-    .globalMain > .siteList{
-        margin-left: 0;
-        margin-right: 0;
-        justify-content: flex-start;
-        margin-right: -25px;
-    }
+    margin-right: -5%;
+    /*justify-content: space-between;*/
 }
 .globalMain > .siteList li{
-    /*border: 1px solid blue;*/
-    margin-bottom: 10px;
+    width: 20%;
+    margin-bottom: 20px;
+    display: flex;flex-direction: column;align-items: center;
+    justify-content:center;
+    margin-right: 5%;
 }
-@media (min-width: 450px) {
+@media (min-width: 650px) {
     .globalMain > .siteList li{
-        margin-right: 25px;
+        width: 11.666666%;
     }
 }
 .globalMain > .siteList .site{
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    width: 160px;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: white;
-    padding: 20px 0;
+    /*background: white;*/
+    background: #F2F2F2;
     position: relative;/*给关闭符号做定位*/
     cursor: pointer;
 }
+@media (min-width: 600px) {
+    .globalMain > .siteList .site{
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+    }
+}
 .globalMain > .siteList .site > .logo{
-    /*border: 1px solid blue;*/
-    width: 64px;
-    height: 64px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 64px;
+    font-size: 34px;
     text-transform: uppercase;
 }
-.globalMain > .siteList .site > .link{
-    /*border: 1px solid red;*/
+.globalMain > .siteList .link{
     font-size: 14px;
-    margin-top: 4px;
+    margin: 10px 0;
+    max-width: 60px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+@media (min-width: 600px) {
+    .globalMain > .siteList .link{
+        max-width: 80px;
+        font-size: 18px;
+    }
 }
 .globalMain > .siteList .site > .addButton{
     /*border: 1px solid red;*/
@@ -131,8 +170,8 @@ body{background: #eeeeee}
 }
 .globalMain > .siteList .site > .addButton .icon{
     /*border: 1px solid red;*/
-    width: 64px;
-    height: 64px;
+    width: 34px;
+    height: 34px;
     font-size: 8px;
     display: flex;
     justify-content: center;
@@ -145,12 +184,11 @@ body{background: #eeeeee}
 
 }
 .globalMain > .siteList .site > .close{
-    /*border: 1px solid red;*/
     width: 30px;
     height: 30px;
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: -20px;
+    top: -10px;
     text-align: center;
     line-height: 30px;
     /*font-size: 20px;*/
@@ -165,11 +203,19 @@ body{background: #eeeeee}
     }
 }
 .globalMain > .siteList .site > .close .icon{
-    /*border: 1px solid red;*/
-    /*width: 20px;*/
-    /*height: 20px;*/
-    /*color: black;*/
+    width: 10px;
+    height: 10px;
+    fill:#AAAAAA;
 }
+@media (min-width: 450px) {
+    .globalMain > .siteList .site > .close .icon{
+        fill:#AAA;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
 /*站点   结束*/
 
-/*# sourceMappingURL=style.73dbe788.css.map */
+/*# sourceMappingURL=style.f7eb13d7.css.map */
