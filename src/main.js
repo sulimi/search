@@ -10,8 +10,12 @@ const x = localStorage.getItem('x');//读取本地存储
 const xObject = JSON.parse(x);//变成对象
 //用parcel会默认在代码外面加一曾作用域，所以这个不是全局变量，不用当心全局污染
 const hashMap = xObject || [//第一次的时候xObject是空的，所以这里要设置一个初始值
-    {logo: 'A', logoType: 'text', url: 'https://www.acfun.cn'},
-    {logo: 'B', logoType: 'text', url: 'https://www.bilibili.com'},
+    {logo: 'G', logoType: 'text', url: 'https://github.com/'},
+    {logo: 'J', logoType: 'text', url: 'https://juejin.im/'},
+    {logo: 'V', logoType: 'text', url: 'https://vuejs.org/'},
+    {logo: 'R', logoType: 'text', url: 'https://reactjs.org/'},
+    {logo: 'I', logoType: 'text', url: 'https://www.iconfont.cn/'},
+    {logo: 'B', logoType: 'text', url: 'https://www.bilibili.com/'},
 
     //新增网站：
 ];
