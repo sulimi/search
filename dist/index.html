@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--手机页面不会被双指放大：-->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>前航 - 前端导航网站</title>
+  <style>.icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }</style>
+  <link rel="stylesheet" href="/style.e308ff8e.css">
+<script src="/style.e308ff8e.js"></script></head>
+<body>
+
+<header class="globalHeader">
+  <form class="searchForm" method="get" action="https://www.baidu.com/s" target="_self">
+    <!--https://www.baidu.com/s?wd=dog-->
+    <!--去看看百度搜索一个关键词的时候搜索页的网址是啥，？后面的是查询字符串，前面就是action提交的地址-->
+    <!--要拿到搜索关键字，inpu上要加name="wd"，然后搜索的时候就会提交wd="你输入的内容"-->
+    <input name="wd" type="text">
+    <button type="submit">
+      <svg class="icon">
+        <use xlink:href="#icon-sousuo"></use>
+      </svg>
+    </button>
+  </form>
+</header>
+
+
+<main class="globalMain">
+  <ul class="siteList">
+    <!--        <li>-->
+    <!--            <a href="https://www.acfun.cn">-->
+    <!--                <div class="site">-->
+    <!--                    <div class="logo">A</div>-->
+    <!--                    <div class="link">acfon.cn</div>-->
+    <!--                </div>-->
+    <!--            </a>-->
+    <!--        </li>-->
+    <!--        <li>-->
+    <!--            <a href="https://www.bilibili.com/">-->
+    <!--                <div class="site">-->
+    <!--                    <div class="logo">-->
+    <!--                        <img src="./images/bilibili.jpg" alt="">-->
+    <!--                    </div>-->
+    <!--                    <div class="link">bilibili.com</div>-->
+    <!--                </div>-->
+    <!--            </a>-->
+    <!--        </li>-->
+    <li class="last">
+      <div class="site">
+        <div class="addButton">
+          <svg class="icon">
+            <use xlink:href="#icon-jiahao"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="text link">新增站点</div>
+    </li>
+  </ul>
+</main>
+<script src="//at.alicdn.com/t/font_1868333_6ohof72sy7j.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/main.1f19ae8e.js"></script>
+</body>
+</html>
